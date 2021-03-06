@@ -4,6 +4,9 @@ import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +25,31 @@ public class UserController {
 
 	@Autowired
 	private UserService service;
+	
+	@Autowired
+	private DiscoveryClient discoveryClient;
+	
+	@Autowired
+	private Environment env;
+	
+	@Value("${spring.application.name}")
+	private String nameMicroservice;
+	
+	@GetMapping(value = "/port")
+	public String getPort() {
+		return "Serviço rodando na Porta: " + env.getProperty("local.server.port");
+	}
+	
+	@GetMapping(value = "/users")
+	public ResponseEntity<?> getServices(){
+		return new ResponseEntity<>(discoveryClient.getServices(), HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/instances")
+	public ResponseEntity<?> getIntances(){
+		return new ResponseEntity<>(discoveryClient.getInstances(nameMicroservice), HttpStatus.OK);
+	}
+	
 
 	@PostMapping(value = "/registration")
 	public ResponseEntity<?> saveUser(@RequestBody User user) {
