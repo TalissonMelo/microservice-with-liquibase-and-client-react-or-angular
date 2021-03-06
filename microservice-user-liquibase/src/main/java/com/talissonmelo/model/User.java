@@ -36,6 +36,7 @@ public class User {
 	
 	private String password;
 	
+	@Setter
 	@Enumerated(value = EnumType.STRING)
 	private Roles roles;
 }
