@@ -20,7 +20,7 @@
         </sql>
         
         <rollback>
-            DROP TABLE user;
+            DROP TABLE course;
         </rollback>
     </changeSet>
 
