@@ -2,9 +2,11 @@ package com.talissonmelo.service;
 
 import com.talissonmelo.model.Course;
 import com.talissonmelo.model.Transaction;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public interface CourseService {
 
     List<Course> allCourses();

@@ -5,9 +5,11 @@ import com.talissonmelo.model.Transaction;
 import com.talissonmelo.repository.CourseReposiotry;
 import com.talissonmelo.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CourseServiceImpl implements  CourseService{
 
     @Autowired
