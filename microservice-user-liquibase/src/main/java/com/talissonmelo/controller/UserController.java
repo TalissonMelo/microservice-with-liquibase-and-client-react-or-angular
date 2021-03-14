@@ -56,7 +56,7 @@ public class UserController {
 		if (service.findByUsername(user.getUsername()) != null) {
 			return new ResponseEntity<>(HttpStatus.CONFLICT);
 		}
-		user.setRoles(Roles.USER);
+		user.setRole(Roles.USER);
 		return new ResponseEntity<>(service.save(user), HttpStatus.CREATED);
 	}
 	

@@ -26,7 +26,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
 			throw new UsernameNotFoundException("Usuário : " + username + ", não cadastrado!.");
 		}
 		Set<GrantedAuthority> authorities = new HashSet<>();
-		authorities.add(new SimpleGrantedAuthority(user.getRoles().name()));
+		authorities.add(new SimpleGrantedAuthority(user.getRole().name()));
 		return new org.springframework.security.core.userdetails.User(username, user.getPassword(), authorities);
 	}
 

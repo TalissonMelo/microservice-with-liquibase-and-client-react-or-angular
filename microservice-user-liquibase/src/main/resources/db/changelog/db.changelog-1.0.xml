@@ -24,5 +24,17 @@
         </rollback>
         
     </changeSet>
+    
+    <changeSet id="2" author="talisson">
+        <sql>
+            INSERT INTO user (username, password, name, role) VALUES('Talisson', '$10$TZ8qFNKSQ2Y.fnstqMk/tewB7lKQzOt5lzhS5LGmsP8VLqealJQN6', 'Talisson De Melo', 1);
+            INSERT INTO user (username, password, name, role) VALUES('Tales', '$10$TZ8qFNKSQ2Y.fnstqMk/tewB7lKQzOt5lzhS5LGmsP8VLqealJQN6', 'Tales Rodrigues', 1);
+            INSERT INTO user (username, password, name, role) VALUES('Bob', '$10$TZ8qFNKSQ2Y.fnstqMk/tewB7lKQzOt5lzhS5LGmsP8VLqealJQN6', 'Bob Rodrigues', 2);
+            INSERT INTO user (username, password, name, role) VALUES('Maria', '$10$TZ8qFNKSQ2Y.fnstqMk/tewB7lKQzOt5lzhS5LGmsP8VLqealJQN6', 'Maria Rodrigues', 1);
+        </sql>
+        <rollback>
+            TRUNCATE TABLE course;
+        </rollback>
+    </changeSet>
 
 </databaseChangeLog>

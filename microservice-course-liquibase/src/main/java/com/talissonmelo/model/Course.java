@@ -25,5 +25,5 @@ public class Course {
     private String category;
 
     @CreationTimestamp
-    private LocalDateTime publisDate;
+    private LocalDateTime publishDate;
 }

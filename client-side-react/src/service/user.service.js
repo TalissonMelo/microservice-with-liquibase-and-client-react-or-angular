@@ -1,8 +1,7 @@
-import axios from 'axios'
-import {BehaviorSubject} from 'rxjs';
+import axios from 'axios';
+import {BehaviorSubject} from 'rxjs'
 
-
-const API_URL = "http://localhost:8765/api/user/users"
+const API_URL = "http://localhost:8765/api/user/users";
 const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
 class UserService {
     

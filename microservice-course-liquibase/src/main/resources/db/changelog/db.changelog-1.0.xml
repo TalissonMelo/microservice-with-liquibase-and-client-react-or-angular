@@ -52,4 +52,23 @@
             TRUNCATE TABLE course;
         </rollback>
     </changeSet>
+
+    <changeSet id="4" author="talisson">
+        <sql>
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(1, 1, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(1, 2, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(1, 3, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(1, 4, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(2, 1, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(3, 2, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(4, 2, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(5, 1, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(5, 2, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(5, 3, NOW());
+            INSERT INTO transaction (course_id, user_id, date_of_issue) VALUES(5, 4, NOW());
+        </sql>
+        <rollback>
+            TRUNCATE TABLE transaction;
+        </rollback>
+    </changeSet>
 </databaseChangeLog>

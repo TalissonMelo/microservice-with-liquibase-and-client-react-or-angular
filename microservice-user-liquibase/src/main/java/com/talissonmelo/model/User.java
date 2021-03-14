@@ -38,5 +38,5 @@ public class User {
 	
 	@Setter
 	@Enumerated(value = EnumType.STRING)
-	private Roles roles;
+	private Roles role;
 }
