@@ -13,14 +13,14 @@ export class UserService {
 
     login(user: User): Observable<any> {
         const headers = {authorization:'Basic ' + btoa(user.username + ':' + user.password)};
-        return this.http.get<any>(`${environment.api_url}/login`, {headers: headers})
+        return this.http.get<any>(`${environment.microservice_user}/login`, {headers: headers})
     }
 
     logOut(): Observable<void> {
-        return this.http.post<any>(`${environment.api_url}/logout`, {});
+        return this.http.post<any>(`${environment.microservice_user}/logout`, {});
     }
 
     register(user: User): Observable<User>{
-        return this.http.post<User>(`${environment.api_url}/registration`, user);
+        return this.http.post<User>(`${environment.microservice_user}/registration`, user);
     }
 }

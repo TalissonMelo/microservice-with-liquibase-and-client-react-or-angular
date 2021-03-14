@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api_url: "http://localhost:8765/api/user/users"
+  microservice_user: "http://localhost:8765/api/user/users",
+  microservice_course: "http://localhost:8765/api/course/courses",
 
 };
 
