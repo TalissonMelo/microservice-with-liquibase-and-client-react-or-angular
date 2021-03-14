@@ -7,26 +7,25 @@ import { Transaction } from "../model/transaction";
 
 @Injectable({
     providedIn: 'root'
-  })
+})
 export class CourseService {
 
-    constructor(private http: HttpClient){
-
+    constructor(private http: HttpClient) {
     }
 
     createTransaction(transaction: Transaction): Observable<Transaction> {
         return this.http.post<Transaction>(`${environment.microservice_course}/enroll`, transaction);
     }
-    
-    filterTransactions(userId: number): Observable<any>{
-        return this.http.get<any>( `${environment.microservice_course}/user/${userId}`);
+
+    filterTransactions(userId: number): Observable<any> {
+        return this.http.get<any>(`${environment.microservice_course}/user/${userId}`);
     }
-    
+
     filterStudents(courseId: number): Observable<any> {
         return this.http.get<any>(`${environment.microservice_course}/course/${courseId}`);
     }
-    
+
     findAllCourses(): Observable<Course[]> {
         return this.http.get<Course[]>(`${environment.microservice_course}/all`);
-      }
+    }
 }
