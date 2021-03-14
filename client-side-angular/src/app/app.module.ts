@@ -9,6 +9,7 @@ import { UserService } from './service/user.service';
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { DetailComponent } from './pages/detail/detail.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DetailComponent } from './pages/detail/detail.component';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    DetailComponent
+    DetailComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
