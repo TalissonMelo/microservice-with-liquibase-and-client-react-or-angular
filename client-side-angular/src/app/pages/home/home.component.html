@@ -22,11 +22,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="row m-3">
-            <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4">Java</td>
-            <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4">Instrutor 001</td>
-            <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><button routerLink="/detail" class="btn btn-info">Detalhes</button></td>
-            <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-success">Ingressar</button></td>
+        <tr class="row m-3" *ngFor="let course of courses">
+            <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4">{{ course.title }}</td>
+            <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4">{{ course.author }}</td>
+            <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-info" (click)="detail()">Detalhes</button></td>
+            <td class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-success" (click)="register()">Ingressar</button></td>
         </tr>
     </tbody>
 </table>
