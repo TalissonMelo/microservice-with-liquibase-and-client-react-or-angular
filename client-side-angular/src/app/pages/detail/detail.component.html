@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <div class="jumbotron">
-        <h1 class="display-4">Curso: </h1>
-        <h1 class="display-4">Número do curso: </h1>
+        <h1 class="display-4">Curso: {{ course.title }}</h1>
+        <h1 class="display-4">Número do curso: {{ course.id }} </h1>
     </div>
 </div>
 <table class="table table-striped ">
@@ -12,9 +12,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr class="row m-3">
-            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">003</th>
-            <td class="col-xs-10 col-sm-10 col-md-10 col-lg-10">Talisson De Melo</td>
+        <tr class="row m-3" *ngFor="let student of students; let i = index">
+            <th class="col-xs-2 col-sm-2 col-md-2 col-lg-2">{{ i + 1  }}</th>
+            <td class="col-xs-10 col-sm-10 col-md-10 col-lg-10">{{ student }}</td>
         </tr>
     </tbody>
 </table>

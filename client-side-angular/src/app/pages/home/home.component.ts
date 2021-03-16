@@ -8,15 +8,15 @@ import { CourseService } from 'src/app/service/course.service';
 })
 export class HomeComponent implements OnInit {
   public courses: Course[] = [];
-
+  
   constructor(private service: CourseService) { }
 
   ngOnInit(): void {
     this.service.findAllCourses().subscribe((res) => this.courses = res);
   }
 
-  detail():void {
-    console.log("Detail");
+  detail(course: Course) : void {
+    localStorage.setItem('course',JSON.stringify(course));
   }
 
   register(): void {
